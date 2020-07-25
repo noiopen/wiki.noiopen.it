@@ -17,11 +17,13 @@ backup:
 
 setup:
 	id -u | grep 0
+	-systemctl stop caddy
+	-systemctl start wiki.service
+	-docker-compose kill
 	crontab $(shell pwd)/crontab
 	cp wiki.service /etc/systemd/system
 	systemctl enable wiki.service
 	systemctl start wiki.service
-	systemctl stop caddy
 	cp Caddyfile /etc/caddy/Caddyfile
 	systemctl start caddy
 	systemctl enable caddy
