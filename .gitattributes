@@ -1,0 +1,4 @@
+backup/noiopen_jobqueue.sqlite filter=lfs diff=lfs merge=lfs -text
+backup/noiopen_l10n_cache.sqlite filter=lfs diff=lfs merge=lfs -text
+backup/noiopen.sqlite filter=lfs diff=lfs merge=lfs -text
+backup/wikicache.sqlite filter=lfs diff=lfs merge=lfs -text
