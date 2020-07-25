@@ -4,4 +4,3 @@ ARG CURRENT_UID
 RUN useradd -u $CURRENT_UID --home /var/www/data current
 ENV APACHE_RUN_USER=current
 COPY logo.png /var/www/html/logo.png
-COPY LocalSettings.php /var/www/html/LocalSettings.php

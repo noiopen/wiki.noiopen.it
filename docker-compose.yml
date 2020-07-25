@@ -11,3 +11,4 @@ services:
       - "./images:/var/www/html/images"
       - "./data:/var/www/data" 
       - "./backup:/var/www/backup"
+      - "./LocalSettings.php:/var/www/html/LocalSettings.php"

@@ -10,7 +10,7 @@ in:
 	docker exec -ti wiki bash
 
 restore:
-	cp backup/noiopen.sqplite data/noiopen.sqlite
+	cp -v backup/* data/noiopen.sqlite
 
 backup:
 	./backup.sh
@@ -24,6 +24,5 @@ setup:
 	systemctl start wiki.service
 
 
-
-.PHONY: all run build in backup restore setup
+.PHONY: all run build in backup restore setup dev
 
