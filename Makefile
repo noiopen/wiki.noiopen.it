@@ -13,6 +13,17 @@ restore:
 	cp backup/noiopen.sqplite data/noiopen.sqlite
 
 backup:
-	docker exec -ti wiki php /var/www/html/maintenance/sqlite.php --backup-to /var/www/backup/noiopen.sqlite
+	./backup.sh
 
-.PHONY: all run build in backup
+
+setup:
+	id -u | grep 0
+	crontab $(PWD)/crontab
+	cp wiki.service /etc/systemd/system
+	systemctl enable wiki.service
+	systemctl start wiki.service
+
+
+
+.PHONY: all run build in backup restore setup
+
