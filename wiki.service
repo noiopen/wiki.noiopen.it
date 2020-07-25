@@ -1,0 +1,14 @@
+[Unit]
+Description=Wiki Service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=noiopen
+WorkingDirectory=/home/noiopen
+ExecStart=docker-compose up
+
+[Install]
+WantedBy=multi-user.target
