@@ -10,19 +10,21 @@ in:
 	docker exec -ti wiki bash
 
 restore:
-	cp -v backup/* data/noiopen.sqlite
+	cp -v backup/* data/
 
 backup:
 	./backup.sh
 
-
 setup:
 	id -u | grep 0
-	crontab $(PWD)/crontab
+	crontab $(shell pwd)/crontab
 	cp wiki.service /etc/systemd/system
 	systemctl enable wiki.service
 	systemctl start wiki.service
-
+	systemctl stop caddy
+	cp Caddyfile /etc/caddy/Caddyfile
+	systemctl start caddy
+	systemctl enable caddy
 
 .PHONY: all run build in backup restore setup dev
 
