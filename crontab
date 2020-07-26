@@ -1,1 +1,1 @@
-* * * * * runuser -l noiopen -c /home/noiopen/wiki.noiopen.it/backup.sh  >>/var/log/backup.log
+* * * * * runuser -l noiopen -c /home/noiopen/wiki.noiopen.it/backup.sh 2>&1  >>/var/log/backup.log
