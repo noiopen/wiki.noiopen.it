@@ -1,16 +1,17 @@
-run:
+up:
 	docker-compose up
-
-build:
-	docker-compose build --build-arg CURRENT_UID=$(shell id -u)
-
-dev: build run
 
 in:
 	docker exec -ti wiki bash
 
+build:
+	docker-compose build --build-arg CURRENT_UID=$(shell id -u)
+
+dev: build up
+
 restore:
-	cp -v backup/* data/
+	cp -v backup/*.sqlite data/
+	cat backup/noiopen.sqlite-*.bin >data/noiopen.sqlite
 
 backup:
 	./backup.sh
@@ -28,5 +29,4 @@ setup:
 	systemctl start caddy
 	systemctl enable caddy
 
-.PHONY: all run build in backup restore setup dev
-
+.PHONY: all up in build dev backup restore setup
