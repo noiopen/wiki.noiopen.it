@@ -1,1 +1,1 @@
-0 * * * * bash /home/noiopen/wiki.noiopen.it/backup.sh >>/var/log/backup.log 2>&1
+*/1 * * * * bash /home/noiopen/wiki.noiopen.it/backup.sh >>/var/log/backup.log 2>&1
