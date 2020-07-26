@@ -1,1 +1,1 @@
-*/60 * * * * sudo -i -u noiopen bash /home/noiopen/wiki.noiopen.it/backup.sh >>/var/log/backup.log 2>&1
+* * * * * runuser -l noiopen -c /home/noiopen/wiki.noiopen.it/backup.sh  >>/var/log/backup.log
