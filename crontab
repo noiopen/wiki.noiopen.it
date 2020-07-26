@@ -1,1 +1,1 @@
-* * * * * bash -c 'runuser -l noiopen -c /home/noiopen/wiki.noiopen.it/backup.sh 2>&1  >>/var/log/backup.log'
+* * * * * bash -c '/sbin/runuser -l noiopen -c /home/noiopen/wiki.noiopen.it/backup.sh >>/var/log/backup.log 2>&1'
