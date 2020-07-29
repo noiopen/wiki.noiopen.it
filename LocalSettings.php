@@ -168,3 +168,12 @@ wfLoadExtension( 'WikiEditor' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
+$wgSMTP = [
+   'host' => 'ssl://smtp.gmail.com',
+   'IDHost' => 'gmail.com',
+   'localhost' => 'noiopen.it',
+   'port' => 465,
+   'username' => 'noiopensource@gmail.com',
+   'password' => 'ztostvshtukrxjwb',
+   'auth' => true
+];
