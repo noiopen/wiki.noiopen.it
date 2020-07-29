@@ -6,6 +6,8 @@ services:
     container_name: wiki
     ports:
       - 8080:80
+    environment:
+      GMAIL_AUTH: ${GMAIL_AUTH}
     volumes:
       - "./images:/var/www/html/images"
       - "./data:/var/www/data" 
