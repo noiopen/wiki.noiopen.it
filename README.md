@@ -16,6 +16,7 @@ Then go to http://localhost:8080/wiki/Pagina_Principale
 
 - create an user noiopen 
 - git clone this repo as `/home/noiopen/wiki.noiopen.it` with an url allowing git push back (as we backup in git)
+- create a .env file and add GMAIL_AUTH=xxx where xxx is an app password to send emails
 - `make restore` to restore the database
 - `sudo make setup` to setup: 
   - caddy
