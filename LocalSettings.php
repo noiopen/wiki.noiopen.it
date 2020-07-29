@@ -174,6 +174,6 @@ $wgSMTP = [
    'localhost' => 'noiopen.it',
    'port' => 465,
    'username' => 'noiopensource@gmail.com',
-   'password' => 'ztostvshtukrxjwb',
+   'password' => $_ENV['GMAIL_AUTH'];
    'auth' => true
 ];
