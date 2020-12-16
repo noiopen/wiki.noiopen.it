@@ -8,7 +8,7 @@ On production server you also need caddy and cron
 
 - git clone of this repo
 - make restore
-- make up
+- make dev
 
 Then go to http://localhost:8080/wiki/Pagina_Principale
 
