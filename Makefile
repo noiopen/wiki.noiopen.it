@@ -9,6 +9,10 @@ build:
 
 dev: build up
 
+cleandev:
+	docker rm wiki
+	docker image rm wikinoiopenit_mediawiki
+
 restore:
 	cp -v backup/*.sqlite data/
 	cat backup/noiopen.sqlite-*.bin >data/noiopen.sqlite
@@ -29,4 +33,5 @@ setup:
 	systemctl start caddy
 	systemctl enable caddy
 
-.PHONY: all up in build dev backup restore setup
+
+.PHONY: all up in build dev cleandev backup restore setup
